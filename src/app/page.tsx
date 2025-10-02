@@ -5,8 +5,10 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="h-screen flex items-center justify-center text-3xl bold text-primary">
-      Karl Eule
+    <div className="h-screen flex items-center justify-center">
+      <div className="text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        Karl Eule
+      </div>
     </div>
   );
 }
