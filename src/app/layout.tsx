@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+import { baseMeta } from '@/seo';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -13,10 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: 'Karl Eule',
-  description: 'Portfolio of Karl Eule',
-};
+export const metadata = baseMeta;
 
 export default function RootLayout({
   children,

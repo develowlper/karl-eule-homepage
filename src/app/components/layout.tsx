@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './layout.module.css';
 import clsx from 'clsx';
+
 export default function ComponentsLayout({
   children,
 }: Readonly<{
