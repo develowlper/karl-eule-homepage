@@ -41,6 +41,10 @@ export default function Home() {
             <h1 className="text-center text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Karl Eule
             </h1>
+            <h2 className="text-center text-2xl font-semibold">
+              Hi, i&apos;m Karl Eule. I&apos;m a fullstack developer from
+              Leipzig.
+            </h2>
           </div>
         </div>
       </div>
