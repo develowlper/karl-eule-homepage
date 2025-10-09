@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 import { baseMeta } from '@/seo';
+import ThemeDropdown from './components/ThemeDropdown';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,12 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="min-h-screen flex flex-col">
-          <nav className="navbar bg-base-100 shadow-sm">
+          <nav className="navbar bg-base-200 shadow-sm text-base-content">
             <div className="navbar-start"> </div>
             <div className="navbar-center">
               <ul className="flex">
@@ -46,7 +47,7 @@ export default function RootLayout({
               </ul>
             </div>
             <div className="navbar-end">
-              <ul>
+              <ul className="flex gap-2 items-center">
                 <li>
                   <a
                     href="https://blog.karl-eule.de"
@@ -57,10 +58,13 @@ export default function RootLayout({
                     Blog
                   </a>
                 </li>
+                <li>
+                  <ThemeDropdown />
+                </li>
               </ul>
             </div>
           </nav>
-          <main className="flex-1 grid">{children}</main>
+          <main className="flex-1 grid bg-base-100">{children}</main>
           <footer className="footer footer-center p-4 bg-base-300 text-base-content">
             <div>
               <p>Copyright © 2025 - All right reserved by Karl Eule</p>
