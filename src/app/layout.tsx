@@ -44,6 +44,14 @@ export default function RootLayout({
                     Components
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href={'/random-mail'}
+                    className="btn btn-ghost rounded-btn"
+                  >
+                    Random Mail
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="navbar-end">
