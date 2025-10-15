@@ -42,7 +42,7 @@ export default function RandomMailPage() {
           <h1 className="text-3xl font-bold mb-4 text-center">
             Random Email Generator
           </h1>
-          <p className="text-lg text-base-content mx-auto">
+          <p className="text-lg mx-auto">
             Generate random email addresses for testing, development, or
             temporary use. Choose your preferred domain and create unique email
             addresses instantly. Perfect for developers who need disposable
