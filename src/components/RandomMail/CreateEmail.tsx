@@ -12,10 +12,8 @@ export default function CreateEmail() {
   };
 
   return (
-    <div>
-      <button className="btn btn-primary" onClick={handleCreateEmail}>
-        Generate Email
-      </button>
-    </div>
+    <button className="btn btn-primary" onClick={handleCreateEmail}>
+      Generate Email
+    </button>
   );
 }

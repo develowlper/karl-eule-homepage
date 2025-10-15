@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo_small.webp';
 
 export const metadata = {
   keywords: 'portfolio, developer, Karl Eule, blog',

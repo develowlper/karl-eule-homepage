@@ -11,7 +11,7 @@ export default function DomainForm() {
       <legend className="fieldset-legend">Enter your domain</legend>
       <input
         type="text"
-        className="input"
+        className="input w-full"
         placeholder="Domain here"
         onChange={(e) => setDomain(e.target.value)}
         value={domain}
