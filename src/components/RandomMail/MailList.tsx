@@ -1,10 +1,28 @@
 'use client';
 
 import { useMailStore } from '@/stores/mailStore';
-import { CgCopy } from 'react-icons/cg';
+import clsx from 'clsx';
+import { MouseEvent, useEffect, useState } from 'react';
+import { CgCheck, CgCopy } from 'react-icons/cg';
 
 export default function MailList() {
   const mails = useMailStore((state) => state.mails);
+
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = (e: MouseEvent<HTMLButtonElement>) => {
+    const mail = e.currentTarget.value;
+    console.log('Copying mail:', mail);
+    navigator.clipboard.writeText(mail);
+    setCopied(true);
+  };
+
+  useEffect(() => {
+    if (copied) {
+      const timer = setTimeout(() => setCopied(false), 2000);
+      return () => clearTimeout(timer);
+    }
+  });
 
   return (
     <div>
@@ -14,10 +32,23 @@ export default function MailList() {
             <div className="border rounded-lg p-2 flex gap-2 items-center justify-between">
               <span>{mail}</span>
               <button
-                onClick={() => navigator.clipboard.writeText(mail)}
-                className="btn btn-accent btn-sm"
+                value={mail}
+                onClick={handleCopy}
+                className={clsx(
+                  'btn btn-sm',
+                  copied ? 'btn-success' : 'btn-primary'
+                )}
               >
-                <CgCopy size={20} />
+                {copied ? (
+                  <CgCheck
+                    className={
+                      copied ? 'text-success-content' : 'text-primary-content'
+                    }
+                    size={20}
+                  />
+                ) : (
+                  <CgCopy size={20} />
+                )}
               </button>
             </div>
           </li>
